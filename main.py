@@ -1,6 +1,7 @@
+# Sets up the names for each Array
 Charities = []
 CharityDonation = [0, 0, 0]
-Charity = 0
+CharityChoice = 0
 Donated = 0
 
 
@@ -11,7 +12,7 @@ def setup():
 
 
 def user():
-    global Charity
+    global CharityChoice
     global Donated
 
     print_charities()
@@ -27,12 +28,12 @@ def user():
         user()
         return
     else:
-        Charity = int(choice - 1)
+        CharityChoice = int(choice - 1)
         shopping_bill = int(input("What was you shopping bill"))
         Donated = shopping_bill * 0.01
 
-    CharityDonation[Charity] += Donated
-    print_donated(Charity, Donated)
+    CharityDonation[CharityChoice] += Donated
+    print_donated(CharityChoice, Donated)
 
 
 def print_donated(charity=0, donated=0):
@@ -63,7 +64,6 @@ def print_totals():
             # Put it in ADDRESS so we know where the New array's elements came from
             if order[i] == CharityDonation[j]:
                 address.append(j)
-                # if
 
     # To order the elements in CHARITIES so that they correspond to the amount donated to them
     for i in range(0, len(address)):
