@@ -81,7 +81,6 @@ def print_totals():
 
 
 def pause(message=""):
-    global Running
     input(message)
     print("\n" * 100)
 
